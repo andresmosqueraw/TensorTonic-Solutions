@@ -6,4 +6,4 @@ def sigmoid(x):
     """
     # Write code here
     x = np.asarray(x)
-    return 1 / (1 + (np.e**-x))
+    return 1 / (1+(np.e**-x))
