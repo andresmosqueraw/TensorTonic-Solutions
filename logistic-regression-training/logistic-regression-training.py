@@ -11,13 +11,14 @@ def train_logistic_regression(X, y, lr=0.1, steps=1000):
     """
     # Write code here
     N, D = X.shape
+
     w = np.zeros(D)
     b = 0.0
 
     for _ in range(steps):
         z = X @ w + b
         p = _sigmoid(z)
-        dw = (X.T @ (p-y)) // N
+        dw = (X.T @ (p-y)) / 2
         db = np.mean(p-y)
         w -= lr * dw
         b -= lr * db
